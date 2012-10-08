@@ -61,6 +61,7 @@ loadJQuery(function(loadSuccess) {
             var encodedurl = encodeURIComponent(url);
             rulerheight = linktopoffset + linkheight;
             if (rulerheight <= lastrulerheight) { rulerheight = lastrulerheight + 2; }
+            //Thanks to Arthur for the idea of using both margins 
             //TODO: layout altogrithm could use some work. Assigning to the left or right column based on whether its position on the page, etc.
             if (switchcolumns || ((rulerheight >= minoffsetA)) && (minoffsetB >= minoffsetA))  {
                 //left column

@@ -2,6 +2,7 @@ body {
 	font-family: "Helvetica Neue", sans-serif;
 	font-size: 3.2mm;
 	width: 150mm;
+	/* Thanks to John for the idea of using the body margin rather than an additional floated div */
 	margin-right: 25mm;
 	margin-left: 25mm;
 	border: 0px;
