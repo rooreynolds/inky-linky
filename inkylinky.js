@@ -1,8 +1,12 @@
-//link to source article (jquery calllback reliable)
-
-//TODO: layout altogrithm could use some work. Assigning to the left or right column based on whether its position on the page, etc.
-
+/*
+ * InkyLinky
+ * 
+ * Make web pages 100% more useful and irritating when printed. Turns external web links into QR codes in the margins.
+ * 
+ * Roo Reynolds | rooreynolds.com | @rooreynolds
+ */
 function loadJQuery(callback) {
+    //jQuery injection technique borrowed from http://iwritecrappycode.wordpress.com/2012/01/25/reliably-injecting-jquery-and-jquery-ui-with-callback/
     try {
         if(typeof jQuery == "undefined" || typeof jQuery.ui == "undefined") {
             var head= document.getElementsByTagName('head')[0];
@@ -57,9 +61,9 @@ loadJQuery(function(loadSuccess) {
             var encodedurl = encodeURIComponent(url);
             rulerheight = linktopoffset + linkheight;
             if (rulerheight <= lastrulerheight) { rulerheight = lastrulerheight + 2; }
+            //TODO: layout altogrithm could use some work. Assigning to the left or right column based on whether its position on the page, etc.
             if (switchcolumns || ((rulerheight >= minoffsetA)) && (minoffsetB >= minoffsetA))  {
                 //left column
-                //TODO: go back to using real QR code images - src="http://qr.kaywa.com/?s=3&d=' + encodedurl + '"
                 $('#linkbarL').append('<div class="linkbox" style="border-right:1px dotted red;color:red; position:absolute; top:' + (Math.max(minoffsetA, linktopoffset - 78)) + 'px;"><div class="linkimg"><img height="81" width="81" src="http://qr.kaywa.com/?s=3&d=' + encodedurl + '"/></div><div class="linktext">' + url + '</div></div>');
                 $(this).css("border", "1px dotted red");
                 switchcolumns = false;
@@ -69,7 +73,6 @@ loadJQuery(function(loadSuccess) {
                 var foo = ($('body').append('<div class="ruler2" style="border-bottom: 1px dotted red;width:' + ($(this).position().left - $('body').offset().left + 2 + $(this).width()) + 'px;position:absolute;top:' + rulerheight + 'px;left:' + ($('body').offset().left - 2) + 'px;"></div>'));
             } else {
                 //right column
-                //TODO: go back to using real QR code images - src="http://qr.kaywa.com/?s=3&d=' + encodedurl + '"
                 $('#linkbarR').append('<div class="linkbox" style="border-left:1px dotted blue; color:blue; position:absolute; top:' + (Math.max(minoffsetB, linktopoffset - 78)) + 'px;"><div class="linkimg"><img height="81" width="81" src="http://qr.kaywa.com/?s=3&d=' + encodedurl + '"/></div><div class="linktext">' + url + '</div></div>');
                 $(this).css("border", "1px dotted blue");
                 switchcolumns = true;
