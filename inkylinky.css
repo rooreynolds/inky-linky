@@ -1,0 +1,41 @@
+body {
+	font-family: "Helvetica Neue", sans-serif;
+	font-size: 3.2mm;
+	width: 150mm;
+	margin-right: 25mm;
+	margin-left: 25mm;
+	border: 0px;
+}
+
+#linkbarL {
+	position:absolute; top:0px; left:0px;
+	margin: 0;
+	padding: 0;
+	width: 25mm;
+	background-color: white;
+	color: black;
+	text-align: left;
+}
+
+#linkbarR {
+	position:absolute; top:0px; left:180mm;
+	margin: 0;
+	padding: 0;
+	width: 25mm;
+	background-color: white;
+	color: black;
+	text-align: left;
+}
+
+.linkbox {
+	font-size: 2mm;
+	width: 22mm;
+	background-color: white;
+	margin: 1mm;
+	padding: 1mm;
+}
+
+.linktext {
+	word-wrap: break-word;
+	width: 22mm;
+}
