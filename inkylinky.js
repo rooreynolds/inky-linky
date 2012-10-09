@@ -67,6 +67,7 @@ loadJQuery(function(loadSuccess) {
                 //left column
                 $('#linkbarL').append('<div class="linkbox" style="border-right:1px dotted red;color:red; position:absolute; top:' + (Math.max(minoffsetA, linktopoffset - 78)) + 'px;"><div class="linkimg"><img height="81" width="81" src="http://qr.kaywa.com/?s=3&d=' + encodedurl + '"/></div><div class="linktext">' + url + '</div></div>');
                 $(this).css("border", "1px dotted red");
+                $(this).css("color", "red");
                 switchcolumns = false;
                 newbox = $('#linkbarL').children().last();
                 minoffsetA = newbox.offset().top + newbox.height() + 5;
@@ -76,6 +77,7 @@ loadJQuery(function(loadSuccess) {
                 //right column
                 $('#linkbarR').append('<div class="linkbox" style="border-left:1px dotted blue; color:blue; position:absolute; top:' + (Math.max(minoffsetB, linktopoffset - 78)) + 'px;"><div class="linkimg"><img height="81" width="81" src="http://qr.kaywa.com/?s=3&d=' + encodedurl + '"/></div><div class="linktext">' + url + '</div></div>');
                 $(this).css("border", "1px dotted blue");
+                $(this).css("color", "blue");
                 switchcolumns = true;
                 newbox = $('#linkbarR').children().last();
                 leftoffset = newbox.offset().left + newbox.width() + 5;
